@@ -1,0 +1,41 @@
+Usage: streamlit run [OPTIONS] TARGET [ARGS]...
+
+Error: Invalid value: File does not exist: santa.py
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://192.168.1.91:8510
+  External URL: http://174.104.159.220:8510
+
+2020-12-31 05:54:20.612 Uncaught exception GET /stream (192.168.1.119)
+HTTPServerRequest(protocol='http', host='santa.peti.work', method='GET', uri='/stream', version='HTTP/1.1', remote_ip='192.168.1.119')
+Traceback (most recent call last):
+  File "/home/peter/anaconda3/lib/python3.7/site-packages/tornado/websocket.py", line 956, in _accept_connection
+    open_result = handler.open(*handler.open_args, **handler.open_kwargs)
+  File "/home/peter/anaconda3/lib/python3.7/site-packages/streamlit/server/server.py", line 640, in open
+    self._session = self._server._create_or_reuse_report_session(self)
+  File "/home/peter/anaconda3/lib/python3.7/site-packages/streamlit/server/server.py", line 581, in _create_or_reuse_report_session
+    uploaded_file_manager=self._uploaded_file_mgr,
+  File "/home/peter/anaconda3/lib/python3.7/site-packages/streamlit/report_session.py", line 96, in __init__
+    self._report, self._on_source_file_changed
+  File "/home/peter/anaconda3/lib/python3.7/site-packages/streamlit/watcher/local_sources_watcher.py", line 92, in __init__
+    module_name=None,  # Only the root script has None here.
+  File "/home/peter/anaconda3/lib/python3.7/site-packages/streamlit/watcher/local_sources_watcher.py", line 130, in _register_watcher
+    watcher=FileWatcher(filepath, self.on_file_changed),
+  File "/home/peter/anaconda3/lib/python3.7/site-packages/streamlit/watcher/event_based_file_watcher.py", line 79, in __init__
+    file_watcher.watch_file(file_path, on_file_changed)
+  File "/home/peter/anaconda3/lib/python3.7/site-packages/streamlit/watcher/event_based_file_watcher.py", line 150, in watch_file
+    folder_handler, folder_path, recursive=False
+  File "/home/peter/anaconda3/lib/python3.7/site-packages/watchdog/observers/api.py", line 294, in schedule
+    emitter.start()
+  File "/home/peter/anaconda3/lib/python3.7/site-packages/watchdog/utils/__init__.py", line 110, in start
+    self.on_thread_start()
+  File "/home/peter/anaconda3/lib/python3.7/site-packages/watchdog/observers/inotify.py", line 121, in on_thread_start
+    self._inotify = InotifyBuffer(path, self.watch.is_recursive)
+  File "/home/peter/anaconda3/lib/python3.7/site-packages/watchdog/observers/inotify_buffer.py", line 35, in __init__
+    self._inotify = Inotify(path, recursive)
+  File "/home/peter/anaconda3/lib/python3.7/site-packages/watchdog/observers/inotify_c.py", line 200, in __init__
+    self._add_dir_watch(path, recursive, event_mask)
+  File "/home/peter/anaconda3/lib/python3.7/site-packages/watchdog/observers/inotify_c.py", line 387, in _add_dir_watch
+    raise OSError(errno.ENOTDIR, os.strerror(errno.ENOTDIR), path)
+NotADirectoryError: [Errno 20] Not a directory: b'/home/jupyter-pomkos/projects/santa'
